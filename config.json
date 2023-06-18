@@ -1,6 +1,6 @@
 {
     "name": "Minidlna",
-    "version": "0.4.1",
+    "version": "0.4.2",
     "slug": "minidlna",
     "description": "MiniDLNA",
     "url": "https://github.com/esmann/ha_minidlna",
