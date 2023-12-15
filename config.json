@@ -1,36 +1,33 @@
 {
-    "name": "Minidlna",
-    "version": "0.4.2",
-    "slug": "minidlna",
-    "description": "MiniDLNA",
-    "url": "https://github.com/esmann/ha_minidlna",
-    "startup": "services",
-    "boot": "auto",
-    "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
-    "ports": {
-              "1900/udp": 1900
-             },	
-    "map": ["config:rw", "ssl:rw", "addons:rw", "share:rw", "backup:rw", "media:rw"],
-    "privileged": [
-      "NET_ADMIN"
-    ],
-    "devices": [
-      "/dev/net/tun"
-    ],
-    "host_network": true,
-    "init": false,	
-    "options": {
-      "media_dir": "/media;/share",
-	  "options": "-d"
-    },
-    "schema": {
-      "media_dir": "str",
-	  "options": "str"
-    },
-        "ingress_port": 9998,
-	"webui": "http://[HOST]:[PORT:9998]",
-	"ingress": true,
-
-    "panel_icon": "mdi:dlna",
-    "panel_title": "MiniDLNA"
+  "name": "MiniDLNA",
+  "version": "0.5.0",
+  "slug": "minidlna",
+  "description": "This addon provide a container for hass.io with MiniDLNA",
+  "url": "https://github.com/mcavallo/ha_minidlna",
+  "startup": "services",
+  "boot": "auto",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "ports": {
+    "1900/udp": 1900
+  },
+  "map": ["config:rw", "ssl:rw", "addons:rw", "share:rw", "backup:rw", "media:rw"],
+  "privileged": ["NET_ADMIN"],
+  "devices": ["/dev/net/tun"],
+  "host_network": true,
+  "init": false,
+  "options": {
+    "friendly_name": "HA Media",
+    "media_dir": "A,/media",
+    "options": "-d"
+  },
+  "schema": {
+    "friendly_name": "str",
+    "media_dir": "str",
+    "options": "str"
+  },
+  "ingress_port": 9998,
+  "webui": "http://[HOST]:[PORT:9998]",
+  "ingress": true,
+  "panel_icon": "mdi:dlna",
+  "panel_title": "MiniDLNA"
 }
